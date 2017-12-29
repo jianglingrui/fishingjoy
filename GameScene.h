@@ -8,7 +8,7 @@
 #include "Fish.h"
 #include "PanelLayer.h"
 #include "FishJoyData.h"
-
+#include "GoldCounterLayer.h"
 USING_NS_CC;
 
 class GameScene :
@@ -21,6 +21,7 @@ public:
 	virtual ~GameScene();
 	void cannonAimAt(CCPoint target);
 	void cannonShootTo(CCPoint target);
+	void alterGold(int delta);
 protected:
 	BackgroundLayer* _backgroundLayer;
 	FishLayer* _fishLayer;
@@ -28,6 +29,9 @@ protected:
 	CannonLayer* _cannonLayer;
 	TouchLayer* _touchLayer;
 	PanelLayer* _paneLayer;
+
+	//GoldCounterLayer* alterGold;
+
 	void preloadResources(void);
 	bool checkOutCollisionBetweenFishesAndBullet(Bullet* bullet);
 	void checkOutCollision();
